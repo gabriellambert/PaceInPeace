@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PaceInPeace</string>
+    <string name="error_running_not_found">Corrida não encontrada</string>
+    <string name="action_search">Pesquisar</string>
+    <string name="action_new_running">Nova Corrida</string>
+    <string name="action_info">Info</string>
+    <string name="hint_search">Procurar por Corrida</string>
+    <string name="about_title">PaceInPeace</string>
+    <string name="about_message">Desenvolvido por Gabriel Lambert</string>
+    <string name="about_button_site">Site</string>
+    <string name="form_label_date">Data</string>
+    <string name="form_label_duration">duration</string>
+    <string name="form_label_distance">distance</string>
+    <string name="error_invalid_running">Corrida não preenchida corretamente</string>
+    <string name="action_delete">Excluir</string>
+
+    <string name="message_runnings_deleted">%d itens excluídos</string>
+    <string name="undo">Desfazer</string>
+
+    <string name="action_share">Compartilhar</string>
+    <string name="share_text">Veja minha corrida</string>
+    <string name="action_edit">Edit</string>
+</resources>
