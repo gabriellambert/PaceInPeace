@@ -5,20 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dominando.android.paceinpeacemvp.databinding.FragmentAccountBinding
 
-class AccountFragment: Fragment() {
+class AccountFragment: BottomSheetDialogFragment() {
 
     private var _binding: FragmentAccountBinding? = null
     private val binding get() = _binding
 
     companion object {
-        fun newInstance() : AccountFragment {
-            val params = Bundle()
-            val fragmentAccount = AccountFragment()
-            fragmentAccount.arguments = params
-            return fragmentAccount
-        }
+        const val TAG = "AccountFragment"
     }
 
     override fun onCreateView(

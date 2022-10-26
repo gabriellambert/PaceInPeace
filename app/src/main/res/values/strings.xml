@@ -20,4 +20,5 @@
     <string name="action_share">Compartilhar</string>
     <string name="share_text">Veja minha corrida</string>
     <string name="action_edit">Edit</string>
+    <string name="greeting">hey,</string>
 </resources>

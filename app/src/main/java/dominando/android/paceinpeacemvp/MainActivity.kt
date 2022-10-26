@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity(),
 
     private var searchView: SearchView? = null
 
+    private val accountFragment = AccountFragment()
+
     private lateinit var binding: ActivityMainBinding
 
     private val listFragment: RunningListFragment by lazy {
@@ -42,14 +44,16 @@ class MainActivity : AppCompatActivity(),
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.action_training -> {
-                    showFragment(TrainingFragment.newInstance())
-                }
+//                R.id.action_training -> {
+//                    showFragment(TrainingFragment.newInstance())
+//                }
                 R.id.action_running -> {
+                    binding.fabAdd.visibility = View.VISIBLE
                     true
                 }
                 R.id.action_account -> {
-                    showFragment(AccountFragment.newInstance())
+                    accountFragment.show(supportFragmentManager, AccountFragment.TAG)
+                    true
                 }
                 else -> false
             }
@@ -112,12 +116,13 @@ class MainActivity : AppCompatActivity(),
         listFragment.search()
         return true
     }
-
-    private fun showFragment(fragment: Fragment): Boolean {
-        val transaction = supportFragmentManager.beginTransaction()
-        binding.container.visibility = View.VISIBLE
-        binding.fragmentList.visibility = View.GONE
-        transaction.replace(R.id.container, fragment).show(fragment).commit()
-        return true
-    }
+//
+//    private fun showFragment(fragment: Fragment): Boolean {
+//        val transaction = supportFragmentManager.beginTransaction()
+//        binding.container.visibility = View.VISIBLE
+//        binding.fragmentList.visibility = View.GONE
+//        binding.fabAdd.visibility = View.GONE
+//        transaction.replace(R.id.container, fragment).show(fragment).commit()
+//        return true
+//    }
 }
