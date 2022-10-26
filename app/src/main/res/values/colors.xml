@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorActionMode">#79cb98</color>
+    <color name="darkGreen">#10454F</color>
+    <color name="lightGreen">#BDE038</color>
+    <color name="mediumGreen">#A3AB78</color>
 </resources>

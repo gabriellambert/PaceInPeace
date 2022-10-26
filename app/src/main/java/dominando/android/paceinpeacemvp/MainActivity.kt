@@ -1,11 +1,14 @@
 package dominando.android.paceinpeacemvp
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import dominando.android.paceinpeacemvp.databinding.ActivityMainBinding
 import dominando.android.paceinpeacemvp.details.RunningDetailsActivity
 import dominando.android.paceinpeacemvp.details.RunningDetailsFragment
@@ -25,6 +28,8 @@ class MainActivity : AppCompatActivity(),
 
     private var searchView: SearchView? = null
 
+    private val accountFragment = AccountFragment()
+
     private lateinit var binding: ActivityMainBinding
 
     private val listFragment: RunningListFragment by lazy {
@@ -36,6 +41,23 @@ class MainActivity : AppCompatActivity(),
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+//                R.id.action_training -> {
+//                    showFragment(TrainingFragment.newInstance())
+//                }
+                R.id.action_running -> {
+                    binding.fabAdd.visibility = View.VISIBLE
+                    true
+                }
+                R.id.action_account -> {
+                    accountFragment.show(supportFragmentManager, AccountFragment.TAG)
+                    true
+                }
+                else -> false
+            }
+        }
 
         binding.fabAdd.setOnClickListener {
             listFragment.hideDeleteMode()
@@ -49,15 +71,6 @@ class MainActivity : AppCompatActivity(),
 
     private fun showDetailsActivity(runningId: Long) {
         RunningDetailsActivity.open(this, runningId)
-    }
-
-    private fun showDetailsFragment(runningId: Long) {
-        searchView?.setOnQueryTextListener(null)
-        val fragment = RunningDetailsFragment.newInstance(runningId)
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.details, fragment, RunningDetailsFragment.TAG_DETAILS)
-            .commit()
     }
 
     //carrega as ações que aparecerão na action bar
@@ -103,4 +116,13 @@ class MainActivity : AppCompatActivity(),
         listFragment.search()
         return true
     }
+//
+//    private fun showFragment(fragment: Fragment): Boolean {
+//        val transaction = supportFragmentManager.beginTransaction()
+//        binding.container.visibility = View.VISIBLE
+//        binding.fragmentList.visibility = View.GONE
+//        binding.fabAdd.visibility = View.GONE
+//        transaction.replace(R.id.container, fragment).show(fragment).commit()
+//        return true
+//    }
 }

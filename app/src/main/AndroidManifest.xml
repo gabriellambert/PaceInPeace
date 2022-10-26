@@ -35,6 +35,11 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity android:name=".RunningActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="false">
+
+        </activity>
     </application>
 
 </manifest>

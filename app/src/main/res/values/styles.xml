@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextGreeting">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/lightGreen</item>
+    </style>
+
+    <style name="TextAccountName">
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextUserInfo">
+        <item name="fontFamily">@font/montserrat_italic</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextTotalAct">
+        <item name="fontFamily">@font/montserrat_black</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:textColor">@color/lightGreen</item>
+    </style>
+
+    <style name="WhiteButton" parent="Widget.Material3.Button.ElevatedButton">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/darkGreen</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="backgroundTint">@color/white</item>
+    </style>
+</resources>
